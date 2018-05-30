@@ -8,4 +8,5 @@ target 'Shopping_Cart' do
   # Pods for Shopping_Cart
     pod 'SDWebImage', '~> 4.0'
     pod 'AFNetworking', '~> 3.0'
+	pod 'Masonry', '~> 1.0'
 end
