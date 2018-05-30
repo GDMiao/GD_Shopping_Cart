@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Shopping_Cart_ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+	self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+	Shopping_Cart_ViewController *cartVC = [[Shopping_Cart_ViewController alloc] init];
+	self.window.rootViewController = cartVC;
+	[self.window makeKeyAndVisible];
     return YES;
 }
 

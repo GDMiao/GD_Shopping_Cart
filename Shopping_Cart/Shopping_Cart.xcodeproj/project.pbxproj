@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		315E5D23AA6625847ECEB4A7 /* libPods-Shopping_Cart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D8AFC3EDA8D74A29FD7C66 /* libPods-Shopping_Cart.a */; };
+		9A8028BA20BE9E3E00D91135 /* Shopping_Cart_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8028B920BE9E3E00D91135 /* Shopping_Cart_ViewController.m */; };
 		C00978F620BD992400F5E203 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C00978F520BD992400F5E203 /* AppDelegate.m */; };
 		C00978F920BD992400F5E203 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00978F820BD992400F5E203 /* ViewController.m */; };
 		C00978FC20BD992400F5E203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00978FA20BD992400F5E203 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		99F888CF420D3C97F7F53407 /* Pods-Shopping_Cart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping_Cart.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shopping_Cart/Pods-Shopping_Cart.release.xcconfig"; sourceTree = "<group>"; };
+		9A8028B820BE9E3D00D91135 /* Shopping_Cart_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shopping_Cart_ViewController.h; sourceTree = "<group>"; };
+		9A8028B920BE9E3E00D91135 /* Shopping_Cart_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shopping_Cart_ViewController.m; sourceTree = "<group>"; };
 		ADC01D7D8A58E2E8AD3CF827 /* Pods-Shopping_Cart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping_Cart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shopping_Cart/Pods-Shopping_Cart.debug.xcconfig"; sourceTree = "<group>"; };
 		C00978F120BD992400F5E203 /* Shopping_Cart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopping_Cart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00978F420BD992400F5E203 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 		C009791920BD9DCE00F5E203 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9A8028B820BE9E3D00D91135 /* Shopping_Cart_ViewController.h */,
+				9A8028B920BE9E3E00D91135 /* Shopping_Cart_ViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8028BA20BE9E3E00D91135 /* Shopping_Cart_ViewController.m in Sources */,
 				C00978F920BD992400F5E203 /* ViewController.m in Sources */,
 				C009790420BD992400F5E203 /* main.m in Sources */,
 				C00978F620BD992400F5E203 /* AppDelegate.m in Sources */,
