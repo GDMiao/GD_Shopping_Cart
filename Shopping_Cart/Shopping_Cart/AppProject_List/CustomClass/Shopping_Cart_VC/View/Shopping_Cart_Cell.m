@@ -44,6 +44,10 @@
 #pragma mark 选择 加 减 事件
 - (IBAction)checkedGoodsAction:(UIButton *)sender {
 	sender.selected = !sender.selected;
+	self.goods.select = sender.selected;
+	if (self.delegate && [self.delegate respondsToSelector:@selector(shoppingCartCell:selected:)]) {
+		[self.delegate shoppingCartCell:self selected:sender.selected];
+	}
 }
 
 - (IBAction)goodsCountAction:(UIButton *)sender {
@@ -61,6 +65,9 @@
 	}
 	_goods.count = _goodsCount;
 	_count.text = [NSString stringWithFormat:@"%ld",_goodsCount];
+	if (self.delegate && [self.delegate respondsToSelector:@selector(shoppingCartCell:selected:)]) {
+		[self.delegate shoppingCartCell:self selected:self.selectBt.selected];
+	}
 }
 
 
@@ -74,6 +81,7 @@
 	_price.text = goods.price;
 	_count.text = [NSString stringWithFormat:@"%ld",goods.count];
 	_goodsCount = goods.count;
+	_selectBt.selected = goods.select;
 }
 
 #pragma mark 随机色

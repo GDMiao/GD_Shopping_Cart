@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface GoodsModel : NSObject
-@property (nonatomic, copy) NSString *select; // 默认 0 未选择, 1 选择
+@property (nonatomic) BOOL select; // 默认 0 未选择, 1 选择
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *introduce;

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "GoodsModel.h"
+@protocol Shopping_Cart_CellSelectedDelegate;
 @interface Shopping_Cart_Cell : UITableViewCell
 @property (nonatomic, strong) GoodsModel *goods;
+@property (nonatomic, weak) id <Shopping_Cart_CellSelectedDelegate> delegate;
+@end
+
+@protocol Shopping_Cart_CellSelectedDelegate <NSObject>
+- (void)shoppingCartCell:(Shopping_Cart_Cell *)cell selected:(BOOL)selected;
 @end

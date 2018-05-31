@@ -13,7 +13,7 @@
 {
 	self = [super init];
 	if (self) {
-		_select = @"0";
+		_select = NO;
 		_count = 1; // 默认 0 , 测试购物车 默认 1
 		
 	}

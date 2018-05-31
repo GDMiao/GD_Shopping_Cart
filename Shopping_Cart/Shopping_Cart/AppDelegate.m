@@ -19,7 +19,8 @@
     // Override point for customization after application launch.
 	self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 	Shopping_Cart_ViewController *cartVC = [[Shopping_Cart_ViewController alloc] init];
-	self.window.rootViewController = cartVC;
+	UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:cartVC];
+	self.window.rootViewController = navC;
 	[self.window makeKeyAndVisible];
     return YES;
 }
