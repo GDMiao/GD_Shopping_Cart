@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		315E5D23AA6625847ECEB4A7 /* libPods-Shopping_Cart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D8AFC3EDA8D74A29FD7C66 /* libPods-Shopping_Cart.a */; };
 		9A8028BA20BE9E3E00D91135 /* Shopping_Cart_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8028B920BE9E3E00D91135 /* Shopping_Cart_ViewController.m */; };
+		9AD4BB6320BF852200DC2512 /* Shopping_Cart_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD4BB6120BF852200DC2512 /* Shopping_Cart_Cell.m */; };
+		9AD4BB6420BF852200DC2512 /* Shopping_Cart_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD4BB6220BF852200DC2512 /* Shopping_Cart_Cell.xib */; };
+		9AD4BB6C20BF8D4C00DC2512 /* icon-cart-jia.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD4BB6620BF8D4C00DC2512 /* icon-cart-jia.png */; };
+		9AD4BB6D20BF8D4C00DC2512 /* icon-cart-jiage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD4BB6720BF8D4C00DC2512 /* icon-cart-jiage.png */; };
+		9AD4BB6E20BF8D4C00DC2512 /* icon-cart-jian.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD4BB6820BF8D4C00DC2512 /* icon-cart-jian.png */; };
+		9AD4BB6F20BF8D4C00DC2512 /* icon-cart-jian_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD4BB6920BF8D4C00DC2512 /* icon-cart-jian_1.png */; };
+		9AD4BB7020BF8D4C00DC2512 /* icon-cart-weixuanzhong.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD4BB6A20BF8D4C00DC2512 /* icon-cart-weixuanzhong.png */; };
+		9AD4BB7120BF8D4C00DC2512 /* icon-cart-xuanzhong.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AD4BB6B20BF8D4C00DC2512 /* icon-cart-xuanzhong.png */; };
+		9AD4BB7420BF9BF000DC2512 /* GoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD4BB7320BF9BF000DC2512 /* GoodsModel.m */; };
 		C00978F620BD992400F5E203 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C00978F520BD992400F5E203 /* AppDelegate.m */; };
 		C00978F920BD992400F5E203 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00978F820BD992400F5E203 /* ViewController.m */; };
 		C00978FC20BD992400F5E203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00978FA20BD992400F5E203 /* Main.storyboard */; };
@@ -21,6 +30,17 @@
 		99F888CF420D3C97F7F53407 /* Pods-Shopping_Cart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping_Cart.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shopping_Cart/Pods-Shopping_Cart.release.xcconfig"; sourceTree = "<group>"; };
 		9A8028B820BE9E3D00D91135 /* Shopping_Cart_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shopping_Cart_ViewController.h; sourceTree = "<group>"; };
 		9A8028B920BE9E3E00D91135 /* Shopping_Cart_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shopping_Cart_ViewController.m; sourceTree = "<group>"; };
+		9AD4BB6020BF852200DC2512 /* Shopping_Cart_Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shopping_Cart_Cell.h; sourceTree = "<group>"; };
+		9AD4BB6120BF852200DC2512 /* Shopping_Cart_Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Shopping_Cart_Cell.m; sourceTree = "<group>"; };
+		9AD4BB6220BF852200DC2512 /* Shopping_Cart_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Shopping_Cart_Cell.xib; sourceTree = "<group>"; };
+		9AD4BB6620BF8D4C00DC2512 /* icon-cart-jia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-cart-jia.png"; sourceTree = "<group>"; };
+		9AD4BB6720BF8D4C00DC2512 /* icon-cart-jiage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-cart-jiage.png"; sourceTree = "<group>"; };
+		9AD4BB6820BF8D4C00DC2512 /* icon-cart-jian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-cart-jian.png"; sourceTree = "<group>"; };
+		9AD4BB6920BF8D4C00DC2512 /* icon-cart-jian_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-cart-jian_1.png"; sourceTree = "<group>"; };
+		9AD4BB6A20BF8D4C00DC2512 /* icon-cart-weixuanzhong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-cart-weixuanzhong.png"; sourceTree = "<group>"; };
+		9AD4BB6B20BF8D4C00DC2512 /* icon-cart-xuanzhong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-cart-xuanzhong.png"; sourceTree = "<group>"; };
+		9AD4BB7220BF9BF000DC2512 /* GoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsModel.h; sourceTree = "<group>"; };
+		9AD4BB7320BF9BF000DC2512 /* GoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsModel.m; sourceTree = "<group>"; };
 		ADC01D7D8A58E2E8AD3CF827 /* Pods-Shopping_Cart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping_Cart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shopping_Cart/Pods-Shopping_Cart.debug.xcconfig"; sourceTree = "<group>"; };
 		C00978F120BD992400F5E203 /* Shopping_Cart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopping_Cart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C00978F420BD992400F5E203 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +74,19 @@
 				99F888CF420D3C97F7F53407 /* Pods-Shopping_Cart.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9AD4BB6520BF8D4C00DC2512 /* icon-shopping-cart */ = {
+			isa = PBXGroup;
+			children = (
+				9AD4BB6620BF8D4C00DC2512 /* icon-cart-jia.png */,
+				9AD4BB6720BF8D4C00DC2512 /* icon-cart-jiage.png */,
+				9AD4BB6820BF8D4C00DC2512 /* icon-cart-jian.png */,
+				9AD4BB6920BF8D4C00DC2512 /* icon-cart-jian_1.png */,
+				9AD4BB6A20BF8D4C00DC2512 /* icon-cart-weixuanzhong.png */,
+				9AD4BB6B20BF8D4C00DC2512 /* icon-cart-xuanzhong.png */,
+			);
+			path = "icon-shopping-cart";
 			sourceTree = "<group>";
 		};
 		AC98846CCF580F2C43FD5F59 /* Frameworks */ = {
@@ -191,6 +224,7 @@
 		C009791620BD9D3500F5E203 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9AD4BB6520BF8D4C00DC2512 /* icon-shopping-cart */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -209,6 +243,9 @@
 		C009791820BD9DCE00F5E203 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9AD4BB6020BF852200DC2512 /* Shopping_Cart_Cell.h */,
+				9AD4BB6120BF852200DC2512 /* Shopping_Cart_Cell.m */,
+				9AD4BB6220BF852200DC2512 /* Shopping_Cart_Cell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +269,8 @@
 		C009791B20BD9DCE00F5E203 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9AD4BB7220BF9BF000DC2512 /* GoodsModel.h */,
+				9AD4BB7320BF9BF000DC2512 /* GoodsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,8 +334,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C009790120BD992400F5E203 /* LaunchScreen.storyboard in Resources */,
+				9AD4BB6E20BF8D4C00DC2512 /* icon-cart-jian.png in Resources */,
+				9AD4BB6D20BF8D4C00DC2512 /* icon-cart-jiage.png in Resources */,
 				C00978FE20BD992400F5E203 /* Assets.xcassets in Resources */,
+				9AD4BB7020BF8D4C00DC2512 /* icon-cart-weixuanzhong.png in Resources */,
 				C00978FC20BD992400F5E203 /* Main.storyboard in Resources */,
+				9AD4BB6C20BF8D4C00DC2512 /* icon-cart-jia.png in Resources */,
+				9AD4BB7120BF8D4C00DC2512 /* icon-cart-xuanzhong.png in Resources */,
+				9AD4BB6F20BF8D4C00DC2512 /* icon-cart-jian_1.png in Resources */,
+				9AD4BB6420BF852200DC2512 /* Shopping_Cart_Cell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +375,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A8028BA20BE9E3E00D91135 /* Shopping_Cart_ViewController.m in Sources */,
+				9AD4BB6320BF852200DC2512 /* Shopping_Cart_Cell.m in Sources */,
+				9AD4BB7420BF9BF000DC2512 /* GoodsModel.m in Sources */,
 				C00978F920BD992400F5E203 /* ViewController.m in Sources */,
 				C009790420BD992400F5E203 /* main.m in Sources */,
 				C00978F620BD992400F5E203 /* AppDelegate.m in Sources */,
