@@ -39,7 +39,7 @@ static NSString *const cart_CellId = @"cart-Cell";
     [super viewDidLoad];
 	
 	
-	[self _initNavigationItem];
+    self.navigationItem.title = @"购物车";
 	// 加载 TableView
 	[self _initTableView];
 	
@@ -54,7 +54,7 @@ static NSString *const cart_CellId = @"cart-Cell";
 	__weak typeof(self) weakself = self;
 	self.priceView.payBlock = ^{
 		__strong typeof(self) stronself = weakself;
-		[stronself rightBarButtonItemAction:nil];
+		[stronself toPayBtAction];
 	};
 	self.priceView.selectAllBlock = ^(BOOL selected) {
 		// 更新数据
@@ -67,6 +67,7 @@ static NSString *const cart_CellId = @"cart-Cell";
 		[stronself.dataArray removeAllObjects];
 		stronself.dataArray = [allData mutableCopy];
 		[stronself.tableView reloadData];
+        [stronself.priceView refreshPrcieViewUI:stronself.dataArray];
 	};
 }
 
@@ -84,46 +85,10 @@ static NSString *const cart_CellId = @"cart-Cell";
     // Pass the selected object to the new view controller.
 }
 */
-#pragma mark -- 初始化 navigationItem
-- (void)_initNavigationItem
-{
-	self.navigationItem.title = @"购物车";
-	UIBarButtonItem *leftButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"icon-cart-weixuanzhong"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)] style:(UIBarButtonItemStylePlain) target:self action:@selector(leftBarButtonItemAction:)];
-	leftButtonItem.tag = 10001;
-	self.navigationItem.leftBarButtonItem = leftButtonItem;
-	UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"结算" style:(UIBarButtonItemStylePlain) target:self action:@selector(rightBarButtonItemAction:)];
-	self.navigationItem.rightBarButtonItem = rightButtonItem;
-}
-
-#pragma mark -- leftBarButtonItem Action
-- (void)leftBarButtonItemAction:(UIBarButtonItem *)item
-{
-	if (item.tag != 10002) {
-		item.tag = 10002;
-		[item setImage:[[UIImage imageNamed:@"icon-cart-xuanzhong"]
-						imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
-
-	} else {
-		item.tag = 10001;
-		[item setImage:[[UIImage imageNamed:@"icon-cart-weixuanzhong"]
-						imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)]];
-		
-	}
-	// 更新数据
-	NSMutableArray *allData = [NSMutableArray new];
-	for (GoodsModel *model in self.dataArray) {
-		model.select = item.tag == 10001 ? NO : YES;
-		[allData addObject:model];
-	}
-	[self.dataArray removeAllObjects];
-	self.dataArray = [allData mutableCopy];
-	[self.tableView reloadData];
-}
-
 
 
 #pragma mark -- rightButtonItem Action
-- (void)rightBarButtonItemAction:(UIBarButtonItem *)item
+- (void)toPayBtAction
 {
 	float totalPrice = 0;
 	for (GoodsModel *model in self.dataArray) {
@@ -193,5 +158,6 @@ static NSString *const cart_CellId = @"cart-Cell";
 	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
 	NSLog(@"%ld Bool:%d",indexPath.row,selected);
 	[self.dataArray replaceObjectAtIndex:indexPath.row withObject:cell.goods];
+    [self.priceView refreshPrcieViewUI:self.dataArray];
 }
 @end

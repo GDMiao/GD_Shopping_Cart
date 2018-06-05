@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GoodsModel.h"
 @interface Shopping_Cart_PriceView : UIView
 @property (copy, nonatomic) void (^payBlock)(void);
 @property (copy, nonatomic) void (^selectAllBlock)(BOOL selected);
@@ -19,4 +19,5 @@
 // price : value
 // count : value
 - (void)refreshPrcieView:(NSDictionary *)dict;
+- (void)refreshPrcieViewUI:(NSArray *)array;
 @end

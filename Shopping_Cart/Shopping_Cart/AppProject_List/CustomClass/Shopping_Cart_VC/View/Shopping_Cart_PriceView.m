@@ -39,4 +39,20 @@
 	self.totalPriceL.text = [NSString stringWithFormat:@"合计:¥%@",priceStr];
 	[self.toPayBt setTitle: [NSString stringWithFormat:@"去结算(%@)",countStr] forState:UIControlStateNormal];
 }
+
+- (void)refreshPrcieViewUI:(NSArray *)array
+{
+    float totalPrice = 0;
+    int totalCount = 0;
+    for (GoodsModel *model in array) {
+        if (!model.select) {
+            
+        } else {
+            totalPrice += model.price.floatValue * model.count;
+            totalCount += model.count;
+        }
+    }
+    self.totalPriceL.text = [NSString stringWithFormat:@"合计:¥%.2f",totalPrice];
+    [self.toPayBt setTitle: [NSString stringWithFormat:@"去结算(%d)",totalCount] forState:UIControlStateNormal];
+}
 @end
