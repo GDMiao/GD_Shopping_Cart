@@ -65,9 +65,12 @@
 	}
 	_goods.count = _goodsCount;
 	_count.text = [NSString stringWithFormat:@"%ld",_goodsCount];
-	if (self.delegate && [self.delegate respondsToSelector:@selector(shoppingCartCell:selected:)]) {
-		[self.delegate shoppingCartCell:self selected:self.selectBt.selected];
+	if (self.goods.select) {
+		if (self.delegate && [self.delegate respondsToSelector:@selector(shoppingCartCell:selected:)]) {
+			[self.delegate shoppingCartCell:self selected:self.selectBt.selected];
+		}
 	}
+	
 }
 
 

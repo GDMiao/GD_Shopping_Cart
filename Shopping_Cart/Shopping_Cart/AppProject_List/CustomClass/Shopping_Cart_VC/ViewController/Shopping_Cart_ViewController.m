@@ -8,10 +8,12 @@
 
 #import "Shopping_Cart_ViewController.h"
 #import "Shopping_Cart_Cell.h"
+#import "Shopping_Cart_PriceView.h"
 #import <Masonry/Masonry.h>
 @interface Shopping_Cart_ViewController ()<Shopping_Cart_CellSelectedDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) Shopping_Cart_PriceView *priceView;
 @end
 
 static NSString *const cart_CellId = @"cart-Cell";
@@ -31,6 +33,8 @@ static NSString *const cart_CellId = @"cart-Cell";
 	}
 	return _dataArray;
 }
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
@@ -38,6 +42,32 @@ static NSString *const cart_CellId = @"cart-Cell";
 	[self _initNavigationItem];
 	// 加载 TableView
 	[self _initTableView];
+	
+	
+	self.priceView = [[Shopping_Cart_PriceView alloc] init];
+	[self.view addSubview:self.priceView];
+	[self.priceView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.right.equalTo(@0);
+		make.bottom.mas_equalTo(-30);
+		make.height.mas_equalTo(50);
+	}];
+	__weak typeof(self) weakself = self;
+	self.priceView.payBlock = ^{
+		__strong typeof(self) stronself = weakself;
+		[stronself rightBarButtonItemAction:nil];
+	};
+	self.priceView.selectAllBlock = ^(BOOL selected) {
+		// 更新数据
+		__strong typeof(self) stronself = weakself;
+		NSMutableArray *allData = [NSMutableArray new];
+		for (GoodsModel *model in stronself.dataArray) {
+			model.select = selected ? NO : YES;
+			[allData addObject:model];
+		}
+		[stronself.dataArray removeAllObjects];
+		stronself.dataArray = [allData mutableCopy];
+		[stronself.tableView reloadData];
+	};
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,6 +119,8 @@ static NSString *const cart_CellId = @"cart-Cell";
 	self.dataArray = [allData mutableCopy];
 	[self.tableView reloadData];
 }
+
+
 
 #pragma mark -- rightButtonItem Action
 - (void)rightBarButtonItemAction:(UIBarButtonItem *)item
