@@ -14,7 +14,8 @@
 {
 	self = [super init];
 	if (self) {
-		self = [[NSBundle mainBundle] loadNibNamed:@"Shopping_Cart_PriceView" owner:self options:nil].lastObject;
+        self = [[NSBundle mainBundle] loadNibNamed:@"Shopping_Cart_PriceView" owner:self options:nil].lastObject;
+        
 	}
 	return self;
 }
@@ -31,28 +32,22 @@
 	NSLog(@"结算");
 }
 
-// 更新视图
-- (void)refreshPrcieView:(NSDictionary *)dict
+// 更新视图 全选
+- (void)allrefreshPriceViewUI:(NSDictionary *)dict
 {
-	NSString *priceStr = dict[@"price"];
-	NSString *countStr = dict[@"count"];
-	self.totalPriceL.text = [NSString stringWithFormat:@"合计:¥%@",priceStr];
-	[self.toPayBt setTitle: [NSString stringWithFormat:@"去结算(%@)",countStr] forState:UIControlStateNormal];
+    NSString *price = dict[@"price"];
+    NSString *count = dict[@"count"];
+    self.totalPriceL.text = [NSString stringWithFormat:@"合计:¥%@",price];
+    [self.toPayBt setTitle: [NSString stringWithFormat:@"去结算(%@)",count] forState:UIControlStateNormal];
 }
 
-- (void)refreshPrcieViewUI:(NSArray *)array
+- (void)singleRefreshPriceViewUI:(NSDictionary *)dict
 {
-    float totalPrice = 0;
-    int totalCount = 0;
-    for (GoodsModel *model in array) {
-        if (!model.select) {
-            
-        } else {
-            totalPrice += model.price.floatValue * model.count;
-            totalCount += model.count;
-        }
-    }
-    self.totalPriceL.text = [NSString stringWithFormat:@"合计:¥%.2f",totalPrice];
-    [self.toPayBt setTitle: [NSString stringWithFormat:@"去结算(%d)",totalCount] forState:UIControlStateNormal];
+    NSString *price = dict[@"price"];
+    NSString *count = dict[@"count"];
+    NSString *allSel = dict[@"allSelect"];
+    self.selectAllBt.selected = allSel.boolValue;
+    self.totalPriceL.text = [NSString stringWithFormat:@"合计:¥%@",price];
+    [self.toPayBt setTitle: [NSString stringWithFormat:@"去结算(%@)",count] forState:UIControlStateNormal];
 }
 @end

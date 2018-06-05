@@ -16,8 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *toPayBt;
 
 // 更新视图 传递参数看情况而定 array / dict
-// price : value
-// count : value
-- (void)refreshPrcieView:(NSDictionary *)dict;
-- (void)refreshPrcieViewUI:(NSArray *)array;
+// price : 123
+// count : 12
+// singleSel : yes / no
+- (void)allrefreshPriceViewUI:(NSDictionary *)dict;
+- (void)singleRefreshPriceViewUI:(NSDictionary *)dict;
 @end

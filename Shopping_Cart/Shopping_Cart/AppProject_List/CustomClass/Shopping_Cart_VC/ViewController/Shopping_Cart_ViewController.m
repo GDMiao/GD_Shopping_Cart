@@ -67,7 +67,7 @@ static NSString *const cart_CellId = @"cart-Cell";
 		[stronself.dataArray removeAllObjects];
 		stronself.dataArray = [allData mutableCopy];
 		[stronself.tableView reloadData];
-        [stronself.priceView refreshPrcieViewUI:stronself.dataArray];
+        [stronself.priceView allrefreshPriceViewUI:[stronself refreshShoppingCart]];
 	};
 }
 
@@ -76,15 +76,27 @@ static NSString *const cart_CellId = @"cart-Cell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark -
+- (NSDictionary *)refreshShoppingCart
+{
+    float totalPrice = 0;
+    int totalCount = 0;
+    NSInteger allSelectCount = self.dataArray.count;
+    for (GoodsModel *model in self.dataArray) {
+        if (!model.select) {
+            allSelectCount --;
+        } else {
+            totalPrice += model.price.floatValue * model.count;
+            totalCount += model.count;
+        }
+    }
+    
+    return @{@"price":[NSString stringWithFormat:@"%.2f",totalPrice],
+             @"count":[NSString stringWithFormat:@"%d",totalCount],
+             @"allSelect":allSelectCount == self.dataArray.count ? @"YES" : @"NO"
+             };
 }
-*/
 
 
 #pragma mark -- rightButtonItem Action
@@ -157,7 +169,7 @@ static NSString *const cart_CellId = @"cart-Cell";
 {
 	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
 	NSLog(@"%ld Bool:%d",indexPath.row,selected);
-	[self.dataArray replaceObjectAtIndex:indexPath.row withObject:cell.goods];
-    [self.priceView refreshPrcieViewUI:self.dataArray];
+    [self.dataArray replaceObjectAtIndex:indexPath.row withObject:cell.goods];
+    [self.priceView singleRefreshPriceViewUI:[self refreshShoppingCart]];
 }
 @end
