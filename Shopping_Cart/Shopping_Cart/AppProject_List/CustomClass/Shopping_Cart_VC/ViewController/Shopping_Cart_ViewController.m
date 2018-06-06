@@ -77,7 +77,7 @@ static NSString *const cart_CellId = @"cart-Cell";
 }
 
 
-#pragma mark -
+#pragma mark - 刷新购物车数据
 - (NSDictionary *)refreshShoppingCart
 {
     float totalPrice = 0;
@@ -162,6 +162,29 @@ static NSString *const cart_CellId = @"cart-Cell";
 	cell.delegate = self;
 	cell.goods = [self.dataArray objectAtIndex:indexPath.row];
 	return cell;
+}
+
+#pragma mark -- 左滑删除
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (editingStyle == UITableViewCellEditingStyleDelete) {
+		// 1.调用接口，从服务器删除此条数据
+
+		// 2.服务器删除成功，调用下面几行代码
+		
+		// 将此条数据从数组中移除，seld.array为存放列表数据的可变数组
+		[self.dataArray removeObjectAtIndex:indexPath.row];
+		//再将此条cell从列表删除,_tableView为列表
+		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+		//记得刷新列表
+		[tableView reloadData];
+		[self.priceView allrefreshPriceViewUI:[self refreshShoppingCart]];
+	}
 }
 
 #pragma mark -- Shopping_Cart_CellSelectedDelegate
